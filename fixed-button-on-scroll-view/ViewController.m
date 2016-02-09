@@ -26,6 +26,7 @@
     
     UIImage *image = [UIImage imageNamed:@"apple"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(buttonDidTouch:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:image forState:UIControlStateNormal];
     
     CGFloat marginRight = 20;
@@ -37,6 +38,10 @@
     [button setFrame:CGRectMake(x, y, width, height)];
     
     [self.view addSubview:button];
+}
+
+- (void)buttonDidTouch:(id)sender {
+    NSLog(@"Touched.");
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
